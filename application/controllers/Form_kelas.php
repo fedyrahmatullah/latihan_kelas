@@ -6,12 +6,14 @@ class Form_kelas extends CI_Controller{
 		$this->load->model('Form_kelas_model','modelform');
 	}
 	
-	public function index(){
+	public function form_kelas(){
 		$this->load->view('form_isidata/Form_kelas');
 	}
 	
 	public function insertData(){
 		$data = array(
+			'username'=> $this->input->post('username'),
+			'password'=> $this->input->post('password'),
 			'nama' => $this->input->post('nama'),
 			'hobi' => $this->input->post('hobi'),
 			'alamat' => $this->input->post('alamat'),
@@ -19,7 +21,7 @@ class Form_kelas extends CI_Controller{
 			'deskripsi' => $this->input->post('deskripsi')
 		);
 		
-		if (!empty($data['nama']) && !empty($data['hobi']) && !empty($data['alamat']) && !empty($data['email']) && !empty($data['deskripsi'])){
+		if (!empty($data['username']) && !empty($data['password']) && !empty($data['nama']) && !empty($data['hobi']) && !empty($data['alamat']) && !empty($data['email']) && !empty($data['deskripsi'])){
 			$inserkan = $this->modelform->insertData($data);
 			
 			if ($inserkan){

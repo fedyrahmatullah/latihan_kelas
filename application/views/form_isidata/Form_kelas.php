@@ -12,6 +12,11 @@
 				<?= $this->session->flashdata('pesan'); ?>
 			</div>
 			<?php endif; ?>
+			<!-- username -->
+			<input type="text" name="username" class="form-control mb-4" placeholder="ISI Username kamu anjeng">
+
+			<!-- password -->
+			<input type="text" name="password" class="form-control mb-4" placeholder="ISI Password kamu kucing">
 
 			<!-- Name -->
 			<input type="text" name="nama" class="form-control mb-4" placeholder="Name">
